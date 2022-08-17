@@ -65,15 +65,35 @@ with mlflow.start_run():
 
 # COMMAND ----------
 
-
-
-# COMMAND ----------
-
-
+e1 = mlflow.search_experiments(order_by=["lastUpdateTime"])[0]
 
 # COMMAND ----------
 
+mlflow.search_experiments()
 
+# COMMAND ----------
+
+e1.artifact_location, e1.DEFAULT_EXPERIMENT_NAME, e1.experiment_id, e1.lifecycle_stage, e1.name, e1.tags
+
+# COMMAND ----------
+
+mlflow.list_experiments()
+
+# COMMAND ----------
+
+mlflow.list_run_infos("7e139a4a7853452eaec47cab92df8735")
+
+# COMMAND ----------
+
+mlflow_runs = mlflow.list_run_infos("7e139a4a7853452eaec47cab92df8735")
+
+# COMMAND ----------
+
+mlflow_runs[0]
+
+# COMMAND ----------
+
+mlflow.get_run("6674aa3907044eb2b622682a2fe8a36f")
 
 # COMMAND ----------
 
